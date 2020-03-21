@@ -1,6 +1,6 @@
 # docker-notes
 ## References
-- Docker Mastery Course by Bret Fischer on Udemy
+- [Docker Mastery Course by Bret Fischer on Udemy](https://www.udemy.com/course/docker-mastery/) - Great Course, go for it first. Use below for reference.
 
 ### prune and df
 
@@ -16,13 +16,22 @@
 - `docker system prune -a` - cleans everything not just dangling images, stopped containers, unused volumes. 
 
 ### docker and persistent data
+docker.com reference on mounts.(https://docs.docker.com/storage/)
 - Containers are immutable(can't be changed at runtime) and ephemeral(once removed, data loss happens). 
 - This is not a limitation but a design goal "immutable infrastructure"(means only redeploy, never change). Gives reliability and consistency i.e. change is reproducible
 - But Containers may create data that would be required to be persisted like databases, files, etc.
-- Docker ensures "Seperation of Concerns" i.e. docker images just hold binaries and immutable data however other concerns like databases, or data produced in other forms("PERSISTENT DATA") are seperated
+- Docker ensures "Seperation of Concerns" i.e. docker images just hold binaries and immutable data however other concerns like "PERSISTENT DATA"(databases, or unique data produced in other forms) are seperated
 - Solution for Persistent Data  - VOLUMES, BIND MOUNT
 
 ### volumes
-- make special location outside of container UFS.
-- 
+- configuration option that make special location outside of container UFS(Union File System) to allow to save unique data.
+- preserves data across container removals and allows to attach to any new containers.
+- containers see it as local file path.
+### bindmounts
+- sharing or mounting host directory or file onto the container
+- link container path to host path
+- containers see it as local file path.
+
+
+
 
