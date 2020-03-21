@@ -1,7 +1,7 @@
 # docker-notes
 ## References
 - [Docker Mastery Course by Bret Fischer on Udemy](https://www.udemy.com/course/docker-mastery/) - Great Course, go for it first. Use below for reference.
-- [www.docker.com](https://docs.docker.com/)
+- [www.docker.com documentation](https://docs.docker.com/)
 ### prune and df
 
 [Demo video](https://youtu.be/_4QzP7uwtvI)
@@ -29,6 +29,9 @@ https://docs.docker.com/engine/reference/builder/#volume
 - preserves data across container removals and allows to attach to any new containers.
 - containers see it as local file path.
 - any data that is created by container outlives until volume is deleted manually.
+> Dockerfile Usage
+`VOLUME ["/data"]`
+
 ### bindmounts
 - sharing or mounting host directory or file onto the container
 - link container path to host path
