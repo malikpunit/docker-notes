@@ -29,8 +29,10 @@ https://docs.docker.com/engine/reference/builder/#volume
 - preserves data across container removals and allows to attach to any new containers.
 - containers see it as local file path.
 - any data that is created by container outlives until volume is deleted manually.
-> Dockerfile Usage
-`VOLUME ["/data"]`
+- >Dockerfile Usage e.g. `VOLUME ["/data"]`
+- `docker volume ls` - lists volumes created by containers 
+- By default, container creates its own mountpoint on host where its saves unique data corresponding to volume.
+- `docker volume inspect <volume_id>` - to check information for volume like mountpoint, driver, label, etc.
 
 ### bindmounts
 - sharing or mounting host directory or file onto the container
